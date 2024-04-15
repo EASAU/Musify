@@ -55,10 +55,10 @@
         margin-top: -2rem;
         /* letter-spacing: 10px; */
         /* text-shadow: 1px 1px 20px #187899, 0 0 20px #187899, 0 0 20px #187899; */
-        background-image: linear-gradient(90deg, #00ffff,#00ffff , #ff00ff, #ff00ff);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
+        background-image: linear-gradient(90deg, #00ffff, #00ffff, #ff00ff, #ff00ff);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
     }
 
     .c3 {
@@ -289,7 +289,8 @@
             margin-top: 5rem;
         }
     }
-    select{
+
+    select {
         background: linear-gradient(45deg, #00ffff, #ff00ff);
         color: white;
     }
@@ -303,8 +304,8 @@
             <option value="playlist1">Mix</option>
             <option value="playlist2">Arijit Singh</option>
             <option value="playlist3">English</option>
-            <option value="playlist4">Workout</option>    
-            <option value="playlist8">Vishal Mishra</option> 
+            <option value="playlist4">Workout</option>
+            <option value="playlist8">Vishal Mishra</option>
             <option value="playlist7">Instrumental</option>
             <option value="playlist5">King</option>
             <option value="playlist6">Mashup</option>
@@ -330,7 +331,7 @@
 
         <div class="c4">
             <button id="prevButton"><i class="fa-solid fa-backward-step"></i></button>
-            
+
             <button id="nextButton"><i class="fa-solid fa-forward-step"></i></button>
         </div>
 
@@ -348,10 +349,12 @@
                 { name: 'Maine Royaan', src: 'Mix/Maine Royaan.mp3' },
                 { name: 'Duniyaa', src: 'Mix/Duniyaa.mp3' },
                 { name: 'Humraah', src: 'Mix/Humraah.mp3' },
+                { name: 'Tum Se Hi', src: 'Mix/Tum Se Hi.mp3' },
                 { name: 'Love You Zindagi', src: 'Mix/Love You Zindagi.mp3' },
                 { name: 'Sawarne Lage', src: 'Mix/Sawarne Lage.mp3' },
                 { name: 'Dil Ko Karaar Aaya', src: 'Mix/Dil Ko Karaar Aaya.mp3' },
                 { name: 'Chogada', src: 'Mix/Chogada.mp3' },
+                { name: 'Kaise Ab Kahein', src: 'Mix/Kaise Ab Kahein.mp3' },
                 { name: 'Makhna', src: 'Mix/Makhna.mp3' },
                 { name: 'Dil Mera Blast', src: 'Mix/Dil Mera Blast.mp3' },
                 { name: 'Maan Meri Jaan', src: 'King/Maan Meri Jaan.mp3' },
@@ -640,30 +643,30 @@
         // logo animation control end
 
         // randomeness starts
-// Function to play a random song from the current playlist
-function playRandom() {
-    const randomIndex = Math.floor(Math.random() * currentPlaylist.length);
-    audioPlayer.src = currentPlaylist[randomIndex].src;
-    audioPlayer.play();
-    audioName.textContent = ' ' + currentPlaylist[randomIndex].name;
-}
+        // Function to play a random song from the current playlist
+        function playRandom() {
+            const randomIndex = Math.floor(Math.random() * currentPlaylist.length);
+            audioPlayer.src = currentPlaylist[randomIndex].src;
+            audioPlayer.play();
+            audioName.textContent = ' ' + currentPlaylist[randomIndex].name;
+        }
 
-// Update the current playlist and play next song
-function playNext() {
-    if (currentIndex < currentPlaylist.length) {
-        playRandom();
-        currentIndex++;
-    } else {
-        // If at the end of the playlist, switch to another playlist
-        const playlistKeys = Object.keys(playlists);
-        const currentPlaylistIndex = playlistKeys.indexOf(playlistSelect.value);
-        const nextPlaylistIndex = (currentPlaylistIndex + 1) % playlistKeys.length;
-        playlistSelect.value = playlistKeys[nextPlaylistIndex];
-        currentPlaylist = playlists[playlistKeys[nextPlaylistIndex]];
-        currentIndex = 0;
-        playRandom();
-    }
-}
+        // Update the current playlist and play next song
+        function playNext() {
+            if (currentIndex < currentPlaylist.length) {
+                playRandom();
+                currentIndex++;
+            } else {
+                // If at the end of the playlist, switch to another playlist
+                const playlistKeys = Object.keys(playlists);
+                const currentPlaylistIndex = playlistKeys.indexOf(playlistSelect.value);
+                const nextPlaylistIndex = (currentPlaylistIndex + 1) % playlistKeys.length;
+                playlistSelect.value = playlistKeys[nextPlaylistIndex];
+                currentPlaylist = playlists[playlistKeys[nextPlaylistIndex]];
+                currentIndex = 0;
+                playRandom();
+            }
+        }
 
         // randomeness ends
     </script>
