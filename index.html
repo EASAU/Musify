@@ -714,18 +714,13 @@
 
         // Call the updatePlaylistDisplay function initially to populate the playlist display
         updatePlaylistDisplay();
-        // Function to update the playlist display
-        function updatePlaylistDisplay() {
-            playlistDisplay.innerHTML = ''; // Clear the current content
-            currentPlaylist.forEach((song, index) => {
-                const songElement = document.createElement('div');
-                songElement.textContent = song.name;
-                songElement.addEventListener('click', () => {
-                    currentIndex = index; // Update the current index to match the clicked song
-                    playNext(); // Play the clicked song
-                });
-                playlistDisplay.appendChild(songElement);
-            });
+
+        // Function to play a specific song by index
+        function playSong(index) {
+            currentIndex = index;
+            audioPlayer.src = currentPlaylist[currentIndex].src;
+            audioPlayer.play();
+            audioName.textContent = ' ' + currentPlaylist[currentIndex].name;
         }
         // PlaylistDisplay ends
     </script>
