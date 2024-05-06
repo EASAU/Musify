@@ -43,6 +43,7 @@
 
         #audioName {
             margin-top: -2.5rem;
+            text-align: center;
         }
 
         .c2 {
@@ -317,8 +318,8 @@
         #playlistDisplay div {
             border-bottom: 1px solid #a4a4a4;
             display: flex;
-            font-family: roboto;
             text-align: center;
+            font-family: roboto;
             justify-content: center;
             align-items: center;
             width: 100%;
@@ -333,7 +334,8 @@
     <div class="sp">
         <label for="playlistSelect"></label>
         <select id="playlistSelect">
-            <option value="playlist1">Mix</option>
+            <option value="playlist9">Mix 2</option>
+            <option value="playlist1">Mix 1</option>
             <option value="playlist2">Arijit Singh</option>
             <option value="playlist3">English</option>
             <option value="playlist4">Workout</option>
@@ -371,10 +373,28 @@
     </div>
     <div id="playlistDisplay"></div> <!-- New div for playlist display -->
     <script>
-         window.addEventListener("contextmenu", function (e) {
-             e.preventDefault();
-         });
+        // window.addEventListener("contextmenu", function (e) {
+        //     e.preventDefault();
+        // });
         const playlists = {
+            playlist9: [
+                { name: 'Naina Da Kya Kasoor', src: 'Mix 2/Naina Da Kya Kasoor.mp3' },
+                { name: 'Sab Tera', src: 'Mix 2/Sab Tera.mp3' },
+                { name: 'Jeena Jeena', src: 'Mix 2/Jeena Jeena.mp3' },
+                { name: 'Atrangi Yaari', src: 'Mix 2/Atrangi Yaari.mp3' },
+                { name: 'Tera Yaar Hoon Main', src: 'Arijit_Singh/Tera Yaar Hoon Main.mp3' },
+                { name: 'Mannat', src: 'Mix 2/Mannat.mp3' },
+                { name: 'Teri Hogaiyaan', src: 'Vishal Mishra/Teri Hogaiyaan.mp3' },
+                { name: 'Tera Yaar Hoon Main', src: 'Arijit_Singh/Tera Yaar Hoon Main.mp3' },
+                { name: 'Kaash Aisa Hota ', src: 'Mix 2/Kaash Aisa Hota.mp3' },
+                { name: 'Ek Ladki Ko Dekha To Aisa Laga', src: 'Mix 2/Ek Ladki Ko Dekha To Aisa Laga.mp3' },
+                { name: 'Gazab Ka Hai Din', src: 'Mix 2/Gazab Ka Hai Din.mp3' },
+                { name: 'Ek Tarfa', src: 'Mix 2/Ek Tarfa.mp3' },
+                { name: 'Yaad Piya Ki Aane Lagi', src: 'Mix 2/Yaad Piya Ki Aane Lagi.mp3' },
+                { name: 'Mere Liye Tum Kaafi Ho', src: 'Mix 2/Mere Liye Tum Kaafi Ho.mp3' },
+                { name: 'Jab Koi Baat', src: 'Mix 2/Jab Koi Baat.mp3' },
+                // { name: '', src: 'Mix 2/.mp3' },
+            ],
             playlist1: [
                 { name: 'Malang', src: 'Mix/Malang.mp3' },
                 { name: 'Baarish Lete Aana', src: 'Mix/Baarish Lete Aana.mp3' },
@@ -413,16 +433,19 @@
                 { name: 'Phir Kabhi', src: 'Arijit_Singh/Phir Kabhi.mp3' },
                 // { name: '', src: 'Mix/.mp3' },
             ],
-             playlist2: [
+            playlist2: [
                 { name: 'Ae Dil Hai Mushkil', src: 'Arijit_Singh/Ae Dil Hai Mushkil.mp3' },
                 { name: 'Apna Bana Le', src: 'Arijit_Singh/Apna Bana Le.mp3' },
                 { name: 'Saware', src: 'Arijit_Singh/Saware.mp3' },
+                { name: 'Tera Yaar Hoon Main', src: 'Arijit_Singh/Tera Yaar Hoon Main.mp3' },
                 { name: 'Qaafirana', src: 'Arijit_Singh/Qaafirana.mp3' },
                 { name: 'Raat Bhar', src: 'Arijit_Singh/Raat Bhar.mp3' },
                 { name: 'Ghungroo', src: 'Arijit_Singh/Ghungroo.mp3' },
                 { name: 'Deva Deva', src: 'Arijit_Singh/Deva Deva.mp3' },
                 { name: 'Phir Kabhi', src: 'Arijit_Singh/Phir Kabhi.mp3' },
+                { name: 'Janam Janam', src: 'Arijit_Singh/Janam Janam.mp3' },
                 { name: 'Heeriye', src: 'Arijit_Singh/Heeriye.mp3' },
+                { name: 'Kashmir Tu Main Kanyakumari', src: 'Arijit_Singh/Kashmir Tu Main Kanyakumari.mp3' },
                 { name: 'Kesariya', src: 'Arijit_Singh/Kesariya.mp3' },
                 { name: 'Pachtaoge', src: 'Arijit_Singh/Pachtaoge.mp3' },
                 { name: 'Bekhayali', src: 'Arijit_Singh/Bekhayali.mp3' },
