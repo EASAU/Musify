@@ -72,11 +72,11 @@
 
         @keyframes fade {
             0% {
-                opacity: 0;
+                opacity: 0.1;
             }
 
             50% {
-                opacity: 0.2;
+                opacity: 0.3;
 
             }
 
@@ -449,7 +449,7 @@
             setTimeout(function () {
                 document.querySelector('.intro').style.display = 'none';
 
-            }, 5000);
+            }, 4200);
         };
 
         document.addEventListener("DOMContentLoaded", function () {
@@ -461,11 +461,11 @@
                 if (index < text.length) {
                     logoText.textContent += text.charAt(index);
                     index++;
-                    setTimeout(typeEffect, 280); // Adjust typing speed here
+                    setTimeout(typeEffect, 150); // Adjust typing speed here
                 }
             }
 
-            setTimeout(typeEffect, 700); // Start typing after a short delay
+            setTimeout(typeEffect, 1000); // Start typing after a short delay
         });
 
         const playlists = {
