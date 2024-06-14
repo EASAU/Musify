@@ -38,15 +38,14 @@
             justify-content: center;
             align-items: center;
             z-index: 10;
+
         }
 
+
         .intro .logo {
-            /* font-size: 7.4rem;
-            margin-left: auto;
-            margin-right: auto;
-            height: 340px;
-            width: 320px; */
+
             color: white;
+
         }
 
         .logoIntro {
@@ -68,23 +67,27 @@
             background-color: #187899;
             text-shadow: 1.5px 0px 0px #ff00ff, -1.5px 0px 0px #00ffff;
             box-shadow: -5px 0px 20px 0px #00ffff, inset 5px 0px 20px 0px #00ffff, 5px 0px 20px 0px #ff00ff, inset -5px 0px 20px 0px #ff00ff;
-        animation: fade 3s linear;
+            animation: fade 3s linear;
         }
-@keyframes fade{
-    0%{
-opacity: 0;
-    }
-    50%{
-        opacity: 0.2;
-        
-    }
-    75%{
-        opacity: 0.7;
-    }
-    100%{
-       opacity: 1;
-    }
-}
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.2;
+
+            }
+
+            75% {
+                opacity: 0.7;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
 
         .c1 {
             display: flex;
@@ -390,8 +393,9 @@ opacity: 0;
 
 <body>
     <div class="intro">
-        <!-- <img src="Musify.png" alt="">  -->
-        <div class="logoIntro"><span>Musify</span></div>
+        <!-- <div class="logoIntro"><span></span></div>  -->
+        <div class="logoIntro"><span id="logoText"></span></div>
+    </div>
     </div>
     <div class="logo"><span id="mus">Musify</span></div>
     <div class="sp">
@@ -436,15 +440,34 @@ opacity: 0;
     </div>
     <div id="playlistDisplay"></div> <!-- New div for playlist display -->
     <script>
-        // JavaScript to hide the intro screen after 5 seconds
+
+        // window.addEventListener("contextmenu", function (e) {
+        //     e.preventDefault();
+        // });
+
         window.onload = function () {
             setTimeout(function () {
                 document.querySelector('.intro').style.display = 'none';
+
             }, 5000);
         };
-         window.addEventListener("contextmenu", function (e) {
-             e.preventDefault();
-         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const text = "Musify";
+            const logoText = document.getElementById("logoText");
+            let index = 0;
+
+            function typeEffect() {
+                if (index < text.length) {
+                    logoText.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeEffect, 280); // Adjust typing speed here
+                }
+            }
+
+            setTimeout(typeEffect, 700); // Start typing after a short delay
+        });
+
         const playlists = {
             playlist9: [
                 { name: 'Aaoge Tum Kabhi', src: 'Mix 2/Aaoge Tum Kabhi.mp3' },
