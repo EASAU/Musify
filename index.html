@@ -845,6 +845,36 @@
         }
 
         // randomeness ends
+
+        // Playlist Randomness start
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to play a random song from a random playlist
+            function playRandomSong() {
+                // Get all playlist keys
+                const playlistKeys = Object.keys(playlists);
+
+                // Select a random playlist key
+                const randomPlaylistKey = playlistKeys[Math.floor(Math.random() * playlistKeys.length)];
+
+                // Get the array of songs for the selected playlist
+                const randomPlaylist = playlists[randomPlaylistKey];
+
+                // Select a random song index from the playlist
+                const randomSongIndex = Math.floor(Math.random() * randomPlaylist.length);
+
+                // Set the current playlist and song
+                currentPlaylist = randomPlaylist;
+                currentIndex = randomSongIndex;
+
+                // Play the selected song
+                playSong(currentIndex);
+            }
+
+            // Call the function to play a random song on page load
+            playRandomSong();
+        });
+        // Playlist Randomness ends
+        
         // PlaylistDisplay start
         // Update the current playlist when the dropdown selection changes
         playlistSelect.addEventListener('change', function () {
